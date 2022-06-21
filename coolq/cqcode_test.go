@@ -5,8 +5,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/Mrs4s/MiraiGo/message"
-	"github.com/Mrs4s/MiraiGo/utils"
+	"github.com/jasmineamber/MiraiGo/message"
+	"github.com/jasmineamber/MiraiGo/utils"
 	"github.com/stretchr/testify/assert"
 	"github.com/tidwall/gjson"
 

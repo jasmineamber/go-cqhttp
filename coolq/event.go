@@ -9,9 +9,9 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/Mrs4s/MiraiGo/binary"
-	"github.com/Mrs4s/MiraiGo/client"
-	"github.com/Mrs4s/MiraiGo/message"
+	"github.com/jasmineamber/MiraiGo/binary"
+	"github.com/jasmineamber/MiraiGo/client"
+	"github.com/jasmineamber/MiraiGo/message"
 	log "github.com/sirupsen/logrus"
 
 	"github.com/Mrs4s/go-cqhttp/db"

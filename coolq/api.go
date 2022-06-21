@@ -16,10 +16,10 @@ import (
 
 	"github.com/segmentio/asm/base64"
 
-	"github.com/Mrs4s/MiraiGo/binary"
-	"github.com/Mrs4s/MiraiGo/client"
-	"github.com/Mrs4s/MiraiGo/message"
-	"github.com/Mrs4s/MiraiGo/utils"
+	"github.com/jasmineamber/MiraiGo/binary"
+	"github.com/jasmineamber/MiraiGo/client"
+	"github.com/jasmineamber/MiraiGo/message"
+	"github.com/jasmineamber/MiraiGo/utils"
 	log "github.com/sirupsen/logrus"
 	"github.com/tidwall/gjson"
 
@@ -1846,10 +1846,9 @@ func (bot *CQBot) CQGetStatus() global.MSG {
 // @route(get_private_info)
 func (bot *CQBot) CQGetPrivateInfo() global.MSG {
 	return OK(global.MSG{
-		"bkn":                      bot.Client.getCSRFToken(),
-		"cookies":                  bot.Client.getCookies(),
-		"cookiesWithDomain":        bot.Client.getCookiesWithDomain("qun.qq.com"),
-		"cookies":                  bot.Client.getCookies(),
+		"bkn":                      bot.Client.GetCSRFToken(),
+		"cookies":                  bot.Client.GetCookies(),
+		"cookiesWithDomain":        bot.Client.GetCookiesWithDomain("qun.qq.com")
 	})
 }
 

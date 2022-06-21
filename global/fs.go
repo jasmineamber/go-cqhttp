@@ -12,7 +12,7 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/Mrs4s/MiraiGo/utils"
+	"github.com/jasmineamber/MiraiGo/utils"
 	log "github.com/sirupsen/logrus"
 
 	"github.com/Mrs4s/go-cqhttp/internal/param"

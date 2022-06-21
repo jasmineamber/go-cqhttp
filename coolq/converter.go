@@ -4,10 +4,10 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/Mrs4s/MiraiGo/topic"
+	"github.com/jasmineamber/MiraiGo/topic"
 
-	"github.com/Mrs4s/MiraiGo/client"
-	"github.com/Mrs4s/MiraiGo/message"
+	"github.com/jasmineamber/MiraiGo/client"
+	"github.com/jasmineamber/MiraiGo/message"
 	log "github.com/sirupsen/logrus"
 
 	"github.com/Mrs4s/go-cqhttp/global"

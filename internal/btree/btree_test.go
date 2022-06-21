@@ -5,7 +5,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/Mrs4s/MiraiGo/utils"
+	"github.com/jasmineamber/MiraiGo/utils"
 	assert2 "github.com/stretchr/testify/assert"
 )
 
