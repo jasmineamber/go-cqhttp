@@ -1848,7 +1848,7 @@ func (bot *CQBot) CQGetPrivateInfo() global.MSG {
 	return OK(global.MSG{
 		"bkn":                      bot.Client.GetCSRFToken(),
 		"cookies":                  bot.Client.GetCookies(),
-		"cookiesWithDomain":        bot.Client.GetCookiesWithDomain("qun.qq.com")
+		"cookiesWithDomain":        bot.Client.GetCookiesWithDomain("qun.qq.com"),
 	})
 }
 
