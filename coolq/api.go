@@ -1843,6 +1843,16 @@ func (bot *CQBot) CQGetStatus() global.MSG {
 	})
 }
 
+// @route(get_private_info)
+func (bot *CQBot) CQGetPrivateInfo() global.MSG {
+	return OK(global.MSG{
+		"bkn":                      bot.Client.getCSRFToken(),
+		"cookies":                  bot.Client.getCookies(),
+		"cookiesWithDomain":        bot.Client.getCookiesWithDomain(),
+		"cookies":                  bot.Client.getCookies(),
+	})
+}
+
 // CQSetEssenceMessage 扩展API-设置精华消息
 //
 // https://docs.go-cqhttp.org/api/#%E8%AE%BE%E7%BD%AE%E7%B2%BE%E5%8D%8E%E6%B6%88%E6%81%AF

@@ -176,6 +176,8 @@ func (c *Caller) call(action string, p Getter) global.MSG {
 		return c.bot.CQGetOnlineClients(p0)
 	case "get_status":
 		return c.bot.CQGetStatus()
+	case "get_private_info":
+		return c.bot.CQGetPrivateInfo()
 	case "get_stranger_info":
 		p0 := p.Get("user_id").Int()
 		return c.bot.CQGetStrangerInfo(p0)
