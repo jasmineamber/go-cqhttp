@@ -16,6 +16,7 @@ import (
 	"strings"
 	"time"
 
+	b14 "github.com/fumiama/go-base16384"
 	"github.com/jasmineamber/MiraiGo/binary"
 	"github.com/jasmineamber/MiraiGo/message"
 	"github.com/jasmineamber/MiraiGo/utils"
@@ -1120,6 +1121,13 @@ func (bot *CQBot) makeImageOrVideoElem(d map[string]string, video bool, sourceTy
 			return nil, err
 		}
 		return &LocalImageElement{Stream: bytes.NewReader(b), URL: f}, nil
+	}
+	if !video && strings.HasPrefix(f, "base16384") {
+		b, err := b14.UTF82UTF16BE(utils.S2B(strings.TrimPrefix(f, "base16384://")))
+		if err != nil {
+			return nil, err
+		}
+		return &LocalImageElement{Stream: bytes.NewReader(b14.Decode(b)), URL: f}, nil
 	}
 	rawPath := path.Join(global.ImagePath, f)
 	if video {
