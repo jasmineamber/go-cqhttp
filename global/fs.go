@@ -12,6 +12,7 @@ import (
 	"runtime"
 	"strings"
 
+	b14 "github.com/fumiama/go-base16384"
 	"github.com/jasmineamber/MiraiGo/utils"
 	log "github.com/sirupsen/logrus"
 
@@ -92,6 +93,12 @@ func FindFile(file, cache, p string) (data []byte, err error) {
 		if err != nil {
 			return nil, err
 		}
+	case strings.HasPrefix(file, "base16384"):
+		data, err = b14.UTF82UTF16BE(utils.S2B(strings.TrimPrefix(file, "base16384://")))
+		if err != nil {
+			return nil, err
+		}
+		data = b14.Decode(data)
 	case strings.HasPrefix(file, "file"):
 		var fu *url.URL
 		fu, err = url.Parse(file)
