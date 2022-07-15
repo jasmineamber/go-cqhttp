@@ -143,6 +143,13 @@ func toElements(e []message.IMessageElement, source message.Source) (r []cqcode.
 					{K: "text", V: o.Content},
 				},
 			}
+		case *message.RecordElement:
+			m = cqcode.Element{
+				Type: "record",
+				Data: pairs{
+					{K: "file", V: o.Content},
+				},
+			}
 		case *message.LightAppElement:
 			m = cqcode.Element{
 				Type: "json",
@@ -295,6 +302,11 @@ func ToMessageContent(e []message.IMessageElement) (r []global.MSG) {
 			m = global.MSG{
 				"type": "text",
 				"data": global.MSG{"text": o.Content},
+			}
+		case *message.RecordElement:
+			m = global.MSG{
+				"type": "record",
+				"data": global.MSG{"file": o.Content},
 			}
 		case *message.LightAppElement:
 			m = global.MSG{
@@ -702,6 +714,8 @@ func (bot *CQBot) ConvertContentMessage(content []global.MSG, sourceType message
 		switch c["type"] {
 		case "text":
 			r = append(r, message.NewText(data["text"].(string)))
+		case "record":
+			r = append(r, message.NewRecord(data["file"].(string)))
 		case "image":
 			u, ok := data["url"]
 			d := make(map[string]string, 2)
